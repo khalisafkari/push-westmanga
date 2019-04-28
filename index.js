@@ -9,7 +9,8 @@ db.defaults({ token:[] })
   .write()
 
 app.get('/',(req,res)=>{
-    res.send('data')
+    const data =  db.get('token').value()
+    res.send(data)
 })
 
 app.get('/add',(req,res)=>{
